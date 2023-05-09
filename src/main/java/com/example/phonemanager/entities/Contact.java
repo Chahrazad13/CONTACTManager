@@ -1,10 +1,9 @@
 package com.example.phonemanager.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.Collection;
 
 @Entity
 @Data @AllArgsConstructor @NoArgsConstructor @Getter @Setter
@@ -19,4 +18,6 @@ public class Contact {
     private String email;
     private String password;
     private String imageURL;
+    @ManyToMany
+    private Collection<User> users;
 }

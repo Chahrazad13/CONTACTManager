@@ -2,7 +2,6 @@ package com.example.phonemanager.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.util.Collection;
 
 @Entity

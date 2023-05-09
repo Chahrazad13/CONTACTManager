@@ -23,43 +23,43 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active text-black" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active text-black" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-black" href="all_contacts">All Contacts</a>
-                        <a class="nav-link text-black" href="contact_register">Add new Contact</a>
-
+                    <a class="nav-link text-black" href="all_Contacts">All Contacts</a>
                 </li>
             </ul>
+            <div>
+                <a class="nav-link text-black" href="save">Add new Contact</a>
+            </div>
         </div>
     </div>
 </nav>
 
 <div class="container my-5 p-5" style="border:1px solid black;">
     <h4 class="text-center">New contact</h4>
-    <form class="col-md-4 offset-md-4" th:action="@{/save}" method="post">
+    <form class="col-md-4 offset-md-4"  th:action="@{/save}" th:object="${contact}"method="post">
         <div class="mb-3">
-            <label th:each="contact: ${contacts}" th:text="${contact.lastname}" class="form-label">Lastname
-            </label> <input type="text" class="form-control" name="lastname">
+            <label>Lastname</label>
+            <input type="text" class="form-control" th:field="*{lastname}">
         </div>
 
         <div class="mb-3">
-            <label th:each="contact: ${contacts}" th:text="${contact.firstname}" class="form-label">Firstname
-            </label> <input type="text" class="form-control" name="firstname">
+            <label>Firstname</label>
+            <input type="text" class="form-control" th:field="*{firstname}">
         </div>
         <div class="mb-3">
-            <label th:each="contact: ${contacts}" th:text="${contact.email}" class="form-label">Email
-            </label> <input type="email" class="form-control" name="email">
-        </div>
-
-        <div class="mb-3">
-            <label th:each="contact: ${contacts}" th:text="${contact.password}" class="form-label">Password
-            </label> <input type="password" class="form-control" name="password">
+            <label>Email</label>
+            <input type="text" class="form-control" th:field="*{email}">
         </div>
 
         <div class="mb-3">
-            <label th:each="contact: ${contacts}" th:text="${contact.image}" class="form-label">Image
-            </label> <input type="text" class="form-control" name="image">
+            <label>Picture_URL</label>
+            <input type="text" class="form-control" th:field="*{imageURL}">
+        </div>
+        <div class="mb-3">
+            <label>Password</label>
+            <input type="text" class="form-control" th:field="*{password}">
         </div>
 
         <center><button type="submit" class="btn btn-primary">Submit</button></center>

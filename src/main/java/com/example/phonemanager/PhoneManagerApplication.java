@@ -15,7 +15,6 @@ public class PhoneManagerApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(PhoneManagerApplication.class, args);
-
     }
     @Bean
     CommandLineRunner start(ContactRepository contactRepository){

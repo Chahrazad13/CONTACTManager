@@ -18,6 +18,11 @@ public class Contact {
     private String email;
     private String password;
     private String imageURL;
-    @ManyToMany
-    private Collection<User> users;
+    @ManyToOne
+    @JoinTable(
+            name = "contact_users",
+            joinColumns = @JoinColumn(name = "contact_id"),
+            inverseJoinColumns = @JoinColumn(name = "users_id")
+    )
+    private User user;
 }

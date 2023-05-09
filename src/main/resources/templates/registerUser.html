@@ -37,7 +37,7 @@
 </nav>
 
 <div class="container my-5 p-5" style="border:1px solid black;">
-    <h4 class="text-center">New contact</h4>
+    <h4 class="text-center">New User</h4>
     <form class="col-md-4 offset-md-4"  th:action="@{/save}" th:object="${contact}"method="post">
         <div class="mb-3">
             <label>Lastname</label>
@@ -62,7 +62,7 @@
             <input type="text" class="form-control" th:field="*{password}">
         </div>
 
-        <center><button type="submit" class="btn btn-primary">Submit</button></center>
+        <center><button type="submit" class="btn btn-primary">Add New User</button></center>
     </form>
 </div>
 

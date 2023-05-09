@@ -17,6 +17,12 @@ public class User {
     private String email;
     private String password;
     private String imageURL;
-    @ManyToMany(mappedBy = "users", cascade = CascadeType.ALL)
-    private Collection<Contact> contacts;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+   @JoinTable(
+            name = "contact_users",
+           joinColumns = @JoinColumn(name = "users_id"),
+           inverseJoinColumns = @JoinColumn(name = "contact_id")
+    )
+    private Collection<Contact> contactsList;
+
 }

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/css/display_form.css}" />
+</head>
+<body>
+
+<div class="container my-5 p-5" style="border:1px solid black;">
+    <h4 class="text-center">My informations</h4>
+    <div class="container my-5 col-md-8"th:action="@{/all_Contacts}" th:object="${user}"method="get">
+<table>
+    <tbody>
+    <tr>
+
+    <tr th:each="user :${user}">
+        <td><strong>ID:</strong></td>
+        <td><span th:text="${user.id}"></span></td>
+    </tr>
+    <tr>
+        <td><strong>Firstname:</strong></td>
+        <td><span th:text="${user.firstname}"></span></td>
+    </tr>
+    <tr>
+        <td><strong>Lastname:</strong></td>
+        <td><span th:text="${user.lastname}"></span></td>
+    </tr>
+    <tr>
+        <td><strong>Email:</strong></td>
+        <td><span th:text="${user.email}"></span></td>
+    </tr>
+    <tr>
+        <td><strong>Password:</strong></td>
+        <td><span th:text="${user.password}"></span></td>
+    </tr>
+    <tr>
+        <td><strong>ImageURL:</strong></td>
+        <td><span th:text="${user.imageURL}"></span></td>
+    </tr>
+
+
+        <a th:href="@{/editContact/{id}(id=${user.id})}"
+                                 class="btn submit-btn"> <button type="submit" class="btn btn-primary">Edit my profile</button>
+        </a></td>
+
+
+    </tbody>
+</table>
+</body>
+</html>

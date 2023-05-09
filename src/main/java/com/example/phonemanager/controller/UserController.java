@@ -10,5 +10,4 @@ public class UserController extends ContactController {
     @Autowired
     ContactService contactService;
 
-
 }

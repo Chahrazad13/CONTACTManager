@@ -18,15 +18,17 @@ public class ContactService {
         return contactRepository.findById(id);
     }
 
-    public void save(Contact contact){
-        contactRepository.save(contact);
+    public Contact save(Contact contact){
+      return contactRepository.save(contact);
+
     }
 
     public List<Contact> findAll(){
         List<Contact> contacts = new ArrayList<>();
         return contacts = contactRepository.findAll();}
 
-    public void delete(Contact contact){
-        contactRepository.delete(contact);
+    public void deleteById(Long id) {
+        contactRepository.deleteById(id);
     }
-}
+    }
+

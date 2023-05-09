@@ -40,15 +40,8 @@ public class ContactController {
     }
 
     @PostMapping("/save")
-    public String SaveContact() {
-
-        Contact contact = new Contact();
-        contact.getFirstname();
-        contact.getLastname();
-        contact.getEmail();
-        contact.getPassword();
-        contact.getImageURL();
-
+    public String SaveContact(@ModelAttribute Contact contact) {
+        System.out.println("Contact: "+contact.getFirstname());
         contactService.save(contact);
 
         return "redirect:/all_Contacts";

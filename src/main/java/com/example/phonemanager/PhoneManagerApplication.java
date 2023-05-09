@@ -19,14 +19,15 @@ public class PhoneManagerApplication {
     @Bean
     CommandLineRunner start(ContactRepository contactRepository){
         return args -> {
-            Stream.of("Mohamed","Hassan","Najat")
+            /*Stream.of("Mohamed","Hassan","Najat")
                     .forEach(name->{
                         Contact contact=new Contact();
                         contact.setId(contact.getId());
                         contact.setFirstname(name);
                         contact.setLastname("test");
                         contactRepository.save(contact);
-                    });
-        };}
+                    });*/
+        };
+    }
 
 }
